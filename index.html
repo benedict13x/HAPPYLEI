@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, Lei!</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="brochure" id="brochure">
+
+      <!-- Welcome panel -->
+      <section class="panel active" data-panel="welcome">
+        <div class="panel-inner">
+          <div class="sparkle">&#127880;</div>
+          <h1>Happy Birthday</h1>
+          <h2>Lei</h2>
+          <p class="lead">Welcome to a little something made just for you &#128149;</p>
+          <button class="btn primary" data-go="menu">Open &#8594;</button>
+        </div>
+      </section>
+
+      <!-- Menu panel -->
+      <section class="panel" data-panel="menu">
+        <div class="panel-inner">
+          <h2 class="menu-title">Pick one &#10024;</h2>
+          <p class="lead">Three little things I put together for you.</p>
+          <div class="menu-buttons">
+            <button class="btn choice" data-go="memory">&#128247; Memory</button>
+            <button class="btn choice" data-go="message">&#128140; Message</button>
+            <button class="btn choice" data-go="wish">&#11088; Wish</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Memory panel -->
+      <section class="panel" data-panel="memory">
+        <div class="panel-inner scroller">
+          <h2>&#128247; Our Memories</h2>
+          <p class="lead">Some of my favorite captures of you.</p>
+          <div class="gallery">
+            <figure class="polaroid">
+              <img src="images/photo1.jpg" alt="Lei" loading="lazy" />
+              <figcaption>Effortlessly cool, always.</figcaption>
+            </figure>
+            <figure class="polaroid">
+              <img src="images/photo2.jpg" alt="Lei" loading="lazy" />
+              <figcaption>I always loved your iconic pose.</figcaption>
+            </figure>
+            <figure class="polaroid">
+              <img src="images/photo3.jpg" alt="Lei" loading="lazy" />
+              <figcaption>Soft, sweet, and unforgettable.</figcaption>
+            </figure>
+            <figure class="polaroid">
+              <img src="images/photo4.jpg" alt="Lei" loading="lazy" />
+              <figcaption>Curious eyes, kind heart.</figcaption>
+            </figure>
+            <figure class="polaroid">
+              <img src="images/photo5.jpg" alt="Lei" loading="lazy" />
+              <figcaption>Naturally beautiful, inside and out.</figcaption>
+            </figure>
+            <figure class="polaroid">
+              <img src="images/photo6.jpg" alt="Lei" loading="lazy" />
+              <figcaption>Playful and full of joy.</figcaption>
+            </figure>
+            <figure class="polaroid">
+              <img src="images/photo7.png" alt="Lei's world" loading="lazy" />
+              <figcaption>Even in your own little world &#128149;</figcaption>
+            </figure>
+            <figure class="polaroid">
+              <img src="images/photo8.png" alt="Lei's world" loading="lazy" />
+              <figcaption>…you always make me smile.</figcaption>
+            </figure>
+          </div>
+          <button class="btn back" data-go="menu">&#8592; Back</button>
+        </div>
+      </section>
+
+      <!-- Message panel -->
+      <section class="panel" data-panel="message">
+        <div class="panel-inner scroller">
+          <h2>&#128140; A Message For You</h2>
+          <p class="note">
+            Lei, I just want you to know how grateful I am to have gotten
+            to know you. Honestly, I want to know you even more &mdash; every
+            little thing about you.
+          </p>
+          <p class="note">
+            I love your humor; you're genuinely so funny to me. I love your
+            voice, and I love the way you always carry me in every single game
+            we play together. &#127918;
+          </p>
+          <p class="note">
+            You make everything more fun, and I'm so thankful you're a part
+            of my life. Happy Birthday. &#10084;&#65039;
+          </p>
+          <button class="btn back" data-go="menu">&#8592; Back</button>
+        </div>
+      </section>
+
+      <!-- Wish panel -->
+      <section class="panel" data-panel="wish">
+        <div class="panel-inner scroller">
+          <h2>&#11088; My Wishes For You</h2>
+          <ul class="wishes">
+            <li>Please, please stay healthy &mdash; I can't imagine not being
+              able to play our games with you. &#127793;</li>
+            <li>Stay as kind to me as you've always been. Your kindness means
+              more than you know. &#128149;</li>
+            <li>May every day bring you laughter, good luck, and all the wins
+              (in games and in life)! &#127882;</li>
+            <li>And most of all &mdash; may you always feel as loved and
+              cherished as you make me feel. &#10084;&#65039;</li>
+          </ul>
+          <button class="btn back" data-go="menu">&#8592; Back</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
