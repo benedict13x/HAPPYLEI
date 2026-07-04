@@ -1,55 +1,34 @@
 (function () {
   "use strict";
 
-  const book = document.getElementById("book");
-  const pages = Array.from(book.querySelectorAll(".page"));
-  const nextBtn = document.getElementById("nextBtn");
-  const prevBtn = document.getElementById("prevBtn");
+  const panels = Array.from(document.querySelectorAll(".panel"));
+  const byName = {};
+  panels.forEach((p) => { byName[p.dataset.panel] = p; });
 
-  // Stack the pages so the first one sits on top and they flip in order.
-  const total = pages.length;
-  pages.forEach((page, i) => {
-    page.style.zIndex = String(total - i);
+  let current = document.querySelector(".panel.active") || panels[0];
+
+  function goTo(name) {
+    const target = byName[name];
+    if (!target || target === current) return;
+
+    const leaving = current;
+    leaving.classList.remove("active");
+    leaving.classList.add("exit");
+
+    target.classList.add("active");
+
+    // Clear the exit state once the fold-out animation finishes so the
+    // panel is ready to fold back in next time.
+    window.setTimeout(() => leaving.classList.remove("exit"), 750);
+
+    // Reset scroll position for scrollable panels.
+    const inner = target.querySelector(".scroller");
+    if (inner) inner.scrollTop = 0;
+
+    current = target;
+  }
+
+  document.querySelectorAll("[data-go]").forEach((btn) => {
+    btn.addEventListener("click", () => goTo(btn.dataset.go));
   });
-
-  // currentPage = number of pages already flipped (0 = book closed).
-  let currentPage = 0;
-
-  function render() {
-    pages.forEach((page, i) => {
-      const flipped = i < currentPage;
-      page.classList.toggle("flipped", flipped);
-      // Flipped pages move behind the stack; unflipped keep original order.
-      page.style.zIndex = String(flipped ? i + 1 : total - i);
-    });
-
-    prevBtn.disabled = currentPage === 0;
-    nextBtn.disabled = currentPage === total;
-    nextBtn.textContent = currentPage === total - 1 ? "The End \u2192" : "Next \u2192";
-  }
-
-  function next() {
-    if (currentPage < total) {
-      currentPage++;
-      render();
-    }
-  }
-
-  function prev() {
-    if (currentPage > 0) {
-      currentPage--;
-      render();
-    }
-  }
-
-  nextBtn.addEventListener("click", next);
-  prevBtn.addEventListener("click", prev);
-
-  // Keyboard navigation for accessibility.
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") next();
-    else if (e.key === "ArrowLeft") prev();
-  });
-
-  render();
 })();

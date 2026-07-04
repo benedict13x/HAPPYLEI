@@ -7,201 +7,117 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="scene">
-    <div class="book" id="book">
-      <!-- Each .page turns from right to left. Pages are stacked; the first
-           added page sits on top. We reverse z-index in JS so page 1 is on top. -->
+  <div class="stage">
+    <div class="brochure" id="brochure">
 
-      <!-- Cover -->
-      <div class="page cover">
-        <div class="page-face front">
-          <div class="page-content">
-            <div class="sparkle">&#10024;</div>
-            <h1>Happy Birthday</h1>
-            <h2>Lei</h2>
-            <p class="hint">Tap “Next” to open your book &#128214;</p>
-          </div>
+      <!-- Welcome panel -->
+      <section class="panel active" data-panel="welcome">
+        <div class="panel-inner">
+          <div class="sparkle">&#127880;</div>
+          <h1>Happy Birthday</h1>
+          <h2>Lei</h2>
+          <p class="lead">Welcome to a little something made just for you &#128149;</p>
+          <button class="btn primary" data-go="menu">Open &#8594;</button>
         </div>
-        <div class="page-face back">
-          <div class="page-content muted">
-            <p>&#127880;</p>
-          </div>
-        </div>
-      </div>
+      </section>
 
-      <!-- Page 1 -->
-      <div class="page">
-        <div class="page-face front">
-          <div class="page-content">
-            <div class="page-number">1</div>
-            <h3>To my dear Lei,</h3>
-            <p>On this special day, I just want you to know how much
-               happiness you bring to everyone around you. &#127801;</p>
+      <!-- Menu panel -->
+      <section class="panel" data-panel="menu">
+        <div class="panel-inner">
+          <h2 class="menu-title">Pick one &#10024;</h2>
+          <p class="lead">Three little things I put together for you.</p>
+          <div class="menu-buttons">
+            <button class="btn choice" data-go="memory">&#128247; Memory</button>
+            <button class="btn choice" data-go="message">&#128140; Message</button>
+            <button class="btn choice" data-go="wish">&#11088; Wish</button>
           </div>
         </div>
-        <div class="page-face back">
-          <div class="page-content">
-            <div class="page-number">2</div>
-            <h3>Another year brighter</h3>
-            <p>May this new year of your life be filled with laughter,
-               adventure, and all the little things that make you smile.</p>
-          </div>
-        </div>
-      </div>
+      </section>
 
-      <!-- Page 2 -->
-      <div class="page">
-        <div class="page-face front">
-          <div class="page-content">
-            <div class="page-number">3</div>
-            <h3>A wish for you</h3>
-            <p>Wishing you good health, endless joy, and dreams that keep
-               coming true. You deserve every bit of it. &#11088;</p>
-          </div>
-        </div>
-        <div class="page-face back">
-          <div class="page-content">
-            <div class="page-number">4</div>
-            <h3>Never forget</h3>
-            <p>You are loved, you are appreciated, and you make this world
-               a warmer place just by being you. &#128149;</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Photo pages -->
-      <div class="page">
-        <div class="page-face front">
-          <div class="page-content photo-content">
-            <div class="page-number">5</div>
-            <h3>My favorite person &#128247;</h3>
+      <!-- Memory panel -->
+      <section class="panel" data-panel="memory">
+        <div class="panel-inner scroller">
+          <h2>&#128247; Our Memories</h2>
+          <p class="lead">Some of my favorite captures of you.</p>
+          <div class="gallery">
             <figure class="polaroid">
               <img src="images/photo1.jpg" alt="Lei" loading="lazy" />
               <figcaption>Effortlessly cool, always.</figcaption>
             </figure>
-          </div>
-        </div>
-        <div class="page-face back">
-          <div class="page-content photo-content">
-            <div class="page-number">6</div>
             <figure class="polaroid">
               <img src="images/photo2.jpg" alt="Lei" loading="lazy" />
               <figcaption>That smile lights up the room.</figcaption>
             </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="page">
-        <div class="page-face front">
-          <div class="page-content photo-content">
-            <div class="page-number">7</div>
             <figure class="polaroid">
               <img src="images/photo3.jpg" alt="Lei" loading="lazy" />
               <figcaption>Soft, sweet, and unforgettable.</figcaption>
             </figure>
-          </div>
-        </div>
-        <div class="page-face back">
-          <div class="page-content photo-content">
-            <div class="page-number">8</div>
             <figure class="polaroid">
               <img src="images/photo4.jpg" alt="Lei" loading="lazy" />
               <figcaption>Curious eyes, kind heart.</figcaption>
             </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="page">
-        <div class="page-face front">
-          <div class="page-content photo-content">
-            <div class="page-number">9</div>
             <figure class="polaroid">
               <img src="images/photo5.jpg" alt="Lei" loading="lazy" />
               <figcaption>Naturally beautiful, inside and out.</figcaption>
             </figure>
-          </div>
-        </div>
-        <div class="page-face back">
-          <div class="page-content photo-content">
-            <div class="page-number">10</div>
             <figure class="polaroid">
               <img src="images/photo6.jpg" alt="Lei" loading="lazy" />
               <figcaption>Playful and full of joy.</figcaption>
             </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="page">
-        <div class="page-face front">
-          <div class="page-content photo-content">
-            <div class="page-number">11</div>
             <figure class="polaroid">
               <img src="images/photo7.png" alt="Lei's world" loading="lazy" />
               <figcaption>Even in your own little world &#128149;</figcaption>
             </figure>
-          </div>
-        </div>
-        <div class="page-face back">
-          <div class="page-content photo-content">
-            <div class="page-number">12</div>
             <figure class="polaroid">
               <img src="images/photo8.png" alt="Lei's world" loading="lazy" />
               <figcaption>…you always make me smile.</figcaption>
             </figure>
           </div>
+          <button class="btn back" data-go="menu">&#8592; Back</button>
         </div>
-      </div>
+      </section>
 
-      <!-- Sweet message page -->
-      <div class="page">
-        <div class="page-face front">
-          <div class="page-content">
-            <div class="page-number">13</div>
-            <div class="sparkle">&#128149;</div>
-            <h3>A little sweet note</h3>
-            <p>Lei, every photo of you tells a story of someone genuinely
-               kind, beautiful, and wonderfully unique. Thank you for being
-               exactly who you are. On your birthday and always, I hope you
-               feel as cherished as you make everyone else feel. &#10084;&#65039;</p>
-          </div>
+      <!-- Message panel -->
+      <section class="panel" data-panel="message">
+        <div class="panel-inner scroller">
+          <h2>&#128140; A Message For You</h2>
+          <p class="note">
+            Lei, I just want you to know how grateful I am to have gotten
+            to know you. Honestly, I want to know you even more &mdash; every
+            little thing about you.
+          </p>
+          <p class="note">
+            I love your humor; you're genuinely so funny to me. I love your
+            voice, and I love the way you always carry me in every single game
+            we play together. &#127918;
+          </p>
+          <p class="note">
+            You make everything more fun, and I'm so thankful you're a part
+            of my life. Happy Birthday. &#10084;&#65039;
+          </p>
+          <button class="btn back" data-go="menu">&#8592; Back</button>
         </div>
-        <div class="page-face back">
-          <div class="page-content">
-            <div class="page-number">14</div>
-            <p class="muted" style="font-size:1.2rem; opacity:0.7;">
-              &#127801; &#11088; &#127801;
-            </p>
-          </div>
-        </div>
-      </div>
+      </section>
 
-      <!-- Final page -->
-      <div class="page">
-        <div class="page-face front">
-          <div class="page-content">
-            <div class="page-number">15</div>
-            <h3>So here's to you</h3>
-            <p>Happy Birthday once again, Lei. Let's celebrate you today
-               and always! &#127874;</p>
-          </div>
+      <!-- Wish panel -->
+      <section class="panel" data-panel="wish">
+        <div class="panel-inner scroller">
+          <h2>&#11088; My Wishes For You</h2>
+          <ul class="wishes">
+            <li>Please, please stay healthy &mdash; I can't imagine not being
+              able to play our games with you. &#127793;</li>
+            <li>Stay as kind to me as you've always been. Your kindness means
+              more than you know. &#128149;</li>
+            <li>May every day bring you laughter, good luck, and all the wins
+              (in games and in life)! &#127882;</li>
+            <li>And most of all &mdash; may you always feel as loved and
+              cherished as you make me feel. &#10084;&#65039;</li>
+          </ul>
+          <button class="btn back" data-go="menu">&#8592; Back</button>
         </div>
-        <div class="page-face back cover">
-          <div class="page-content">
-            <div class="sparkle">&#127882;</div>
-            <h2>The End</h2>
-            <p class="hint">…but our story continues &#10084;&#65039;</p>
-          </div>
-        </div>
-      </div>
+      </section>
+
     </div>
-  </div>
-
-  <div class="controls">
-    <button id="prevBtn" class="nav-btn" disabled>&#8592; Prev</button>
-    <button id="nextBtn" class="nav-btn">Next &#8594;</button>
   </div>
 
   <script src="script.js"></script>
